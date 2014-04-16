@@ -11,16 +11,32 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140416020850) do
+ActiveRecord::Schema.define(version: 20140416023741) do
 
-  create_table "body_sections", force: true do |t|
+  create_table "genders", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "genders", force: true do |t|
-    t.string   "name"
+  create_table "measurements", force: true do |t|
+    t.string   "height"
+    t.string   "eye_colour"
+    t.string   "hair_colour"
+    t.string   "skin_colour"
+    t.string   "shoe_size"
+    t.string   "neck"
+    t.string   "suit_size"
+    t.string   "shoulders"
+    t.string   "shirt_size"
+    t.string   "inside_leg_size"
+    t.string   "bust"
+    t.string   "bra_size"
+    t.string   "waist"
+    t.string   "hips"
+    t.string   "dress_size"
+    t.string   "clothing_size_age"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -31,7 +47,7 @@ ActiveRecord::Schema.define(version: 20140416020850) do
     t.string   "password_digest"
     t.date     "date_of_birth"
     t.string   "gender_id"
-    t.string   "phone_number"
+    t.integer  "phone_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

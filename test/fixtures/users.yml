@@ -8,7 +8,7 @@
 #  password_digest :string(255)
 #  date_of_birth   :date
 #  gender_id       :string(255)
-#  phone_number    :string(255)
+#  phone_number    :integer
 #  created_at      :datetime
 #  updated_at      :datetime
 #
@@ -17,17 +17,10 @@
 # http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
-  email: MyString
-  password_digest: MyString
+  name: name
+  email: email@www.com
+  password_digest: <%= BCrypt::Password.create("password") %>
   date_of_birth: 2014-04-14
-  gender_id: MyString
-  phone_number: MyString
+  gender: male
+  phone_number: 12345678
 
-two:
-  name: MyString
-  email: MyString
-  password_digest: MyString
-  date_of_birth: 2014-04-14
-  gender_id: MyString
-  phone_number: MyString

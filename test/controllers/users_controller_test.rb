@@ -19,10 +19,10 @@ class UsersControllerTest < ActionController::TestCase
 
   def test_create
     assert_difference('User.count') do
-      post :create, user: {  }
+      post :create, user: { name: "name", email: "here@now.com", password: "password", date_of_birth: "2014-04-14", gender_id: genders(:male), phone_number: "1234567" }
     end
 
-    assert_redirected_to user_path(assigns(:user))
+    assert_redirected_to new_measurement_path)
   end
 
   def test_show
@@ -36,7 +36,7 @@ class UsersControllerTest < ActionController::TestCase
   end
 
   def test_update
-    put :update, id: @user, user: {  }
+    put :update, id: @user, user: { name: "name2" }
     assert_redirected_to user_path(assigns(:user))
   end
 

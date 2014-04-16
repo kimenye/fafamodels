@@ -8,7 +8,7 @@
 #  password_digest :string(255)
 #  date_of_birth   :date
 #  gender_id       :string(255)
-#  phone_number    :string(255)
+#  phone_number    :integer
 #  created_at      :datetime
 #  updated_at      :datetime
 #
@@ -17,4 +17,9 @@ class User < ActiveRecord::Base
   has_secure_password(validations: false)
   
   belongs_to :gender
+  has_one :measurement
+  
+  validates_presence_of :name, :email, :date_of_birth, :gender, :phone_number
+  validates :password, presence: true, :on => :create
+  validates_uniqueness_of :email
 end

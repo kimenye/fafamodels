@@ -27,6 +27,9 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+#for MTI
+gem 'acts_as_relation', '~> 1.0'
+
 group :test, :development do
   gem 'pry'
   gem 'rails_layout'
