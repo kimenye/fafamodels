@@ -27,13 +27,37 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
+group :test, :development do
+  gem 'pry'
+  gem 'rails_layout'
+  gem 'annotate'
+  gem 'guard-minitest'
+  #for capybara
+  gem 'minitest-rails-capybara'
+
+  gem 'ruby-prof'
+  #for integration testing
+  gem 'capybara'
+  #for headless testing
+  gem 'capybara-webkit'
+  #improving tests’ output
+  gem 'turn'
+  #to open wwebpages while testing
+  gem 'launchy'
+  gem 'database_cleaner'
+  #check test coverage
+  gem 'simplecov', :require => false
+  # To use debugger
+  gem 'debugger'
+end
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.1.2'
+gem 'bcrypt-ruby'
 
 # Use unicorn as the app server
 # gem 'unicorn'
@@ -43,3 +67,5 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+ruby "2.1.1"
