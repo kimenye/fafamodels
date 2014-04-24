@@ -3,6 +3,9 @@ class UsersController < ApplicationController
   before_filter :authorize, only: [:update, :destroy]
   before_action :set_user, only: [:update, :destroy]
 
+  def index
+  end
+  
   # POST /users
   # POST /users.json
   def create
