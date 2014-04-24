@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   respond_to :json
   before_filter :authorize, only: [:update, :destroy]
   before_action :set_user, only: [:update, :destroy]
+  protect_from_forgery with: :null_session, :if => Proc.new { |c| c.request.format == 'application/json' }
 
   def index
   end
