@@ -1,51 +1,15 @@
 require "test_helper"
 
 class MeasurementsControllerTest < ActionController::TestCase
-
   before do
-    @current_user = users(:one)
-    @measurement = measurements(:one)
+    @test_user = users(:one)
+    @measurements = users(:one).create_measurement
   end
-
-  def test_index
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:measurements)
-  end
-
-  def test_new
-    get :new
-    assert_response :success
-  end
-
-  def test_create
-    assert_difference('Measurement.count') do
-      post :create, measurement: {  }
-    end
-
-    assert_redirected_to measurement_path(assigns(:measurement))
-  end
-
-  def test_show
-    get :show, id: @measurement
-    assert_response :success
-  end
-
-  def test_edit
-    get :edit, id: @measurement
-    assert_response :success
-  end
-
+  
   def test_update
-    put :update, id: @measurement, measurement: {  }
-    assert_redirected_to measurement_path(assigns(:measurement))
-  end
-
-  def test_destroy
-    assert_difference('Measurement.count', -1) do
-      delete :destroy, id: @measurement
-    end
-
-    assert_redirected_to measurements_path
+    session[:user_id] = users(:one).id
+    put :update, id: users(:one).id, measurement: { height:"175",eye_colour:"black",hair_colour:"black",skin_colour:"black",shoe_size:"43",neck: "13",suit_size: "42R",shoulders:"13",shirt_size:"large",inside_leg_size:"24",bust:"DD",bra_size:"23DD",waist:"32",hips:"34",dress_size:"large",clothing_size_age:"13" }
+    
+    assert JSON(response.body)['status'] == "success", "updated user does not pass correct status"
   end
 end

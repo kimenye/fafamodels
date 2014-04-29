@@ -1,8 +1,9 @@
 require "test_helper"
 
-class UsersHelperTest < ActionView::TestCase
+class PhotosHelperTest < ActionView::TestCase
 
   def test_sanity
     assert true
   end
+
 end

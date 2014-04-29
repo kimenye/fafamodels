@@ -27,8 +27,9 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
-#for MTI
-gem 'acts_as_relation', '~> 1.0'
+#for images:
+gem 'dragonfly', '~> 1.0.4'
+gem 'dragonfly-s3_data_store'
 
 group :test, :development do
   gem 'pry'

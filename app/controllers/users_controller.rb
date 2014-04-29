@@ -10,8 +10,8 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-
     if @user.save
+      @user.create_measurement
       session[:user_id] = @user.id #log the user in
       render json: {user_id: @user.id, message: 'User was successfully created', status: :success}
     else
