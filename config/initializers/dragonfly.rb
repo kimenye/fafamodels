@@ -12,7 +12,7 @@ Dragonfly.app.configure do
 
   if Rails.env.production?
     datastore :s3,
-      bucket_name: 'fafa-models-bucket',
+      bucket_name: 'fafamobile',
       access_key_id: 'AKIAJFBRUSN5MPVT4VDQ',
       secret_access_key: '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'
   else
