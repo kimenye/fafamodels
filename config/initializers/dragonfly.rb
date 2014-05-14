@@ -12,9 +12,9 @@ Dragonfly.app.configure do
 
   if Rails.env.production?
     datastore :s3,
-      bucket_name: 'fafamobile',
-      access_key_id: 'AKIAJFBRUSN5MPVT4VDQ',
-      secret_access_key: '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'
+    ENV["S3_BUCKET_NAME"],
+    ENV["S3_ACCESS_ID"],
+    ENV["S3_ACCESS_KEY"]
   else
     datastore :file,
       root_path: Rails.root.join('public/system/dragonfly', Rails.env),

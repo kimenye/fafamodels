@@ -76,6 +76,9 @@ GEM
     excon (0.33.0)
     execjs (2.0.2)
     ffi (1.9.3)
+    figaro (0.7.0)
+      bundler (~> 1.0)
+      rails (>= 3, < 5)
     fog (1.22.0)
       fog-brightbox
       fog-core (~> 1.21, >= 1.21.1)
@@ -234,6 +237,7 @@ DEPENDENCIES
   debugger
   dragonfly (~> 1.0.4)
   dragonfly-s3_data_store
+  figaro
   guard-minitest
   jbuilder (~> 1.2)
   jquery-rails

@@ -31,6 +31,9 @@ gem 'jbuilder', '~> 1.2'
 gem 'dragonfly', '~> 1.0.4'
 gem 'dragonfly-s3_data_store'
 
+#for environment variables
+gem 'figaro'
+
 group :test, :development do
   gem 'pry'
   gem 'rails_layout'
