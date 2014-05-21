@@ -29,7 +29,7 @@ update user:
 
 >>put :update, id: user_id, user: {}
 
->>optional within user hash: user=>{:name, :email, :password, :date_of_birth, :gender_id, :phone_number}
+>>optional within user hash: user=>{:name, :email, :gender_id}
 
 >>response.body: "{\"message\":\"User was successfully updated\",\"status\":\"success\"}"
 
