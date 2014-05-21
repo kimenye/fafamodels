@@ -42,7 +42,7 @@ delete user:
 
 >>response.body: "{\"message\":\"User was successfully destroyed\",\"status\":\"success\"}"
 
-update measurements: THIS IS THE ONLY MEASUREMENTS METHOD - measurements are created with the user's creation, therefore only available for updating.
+update measurements: THIS IS THE ONLY MEASUREMENTS METHOD - measurements are created upon the user's creation, therefore only available for updating.
 
 >>PUT/PATCH    /measurements/:id.json
 
