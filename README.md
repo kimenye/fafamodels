@@ -20,8 +20,6 @@ create user:
 
 >>>>gender_id: 1 = male, 2 = female, 3 = kids
 
->>>>phone_number: integer
-
 >>response.body: "{\"user_id\":980191093,\"message\":\"User was successfully created\",\"status\":\"success\"}"
 
 >>response.body: "{\"errors\":{\"name\":[\"can't be blank\"]},\"message\":\"User was not created\",\"status\":\"unprocessable_entity\"}"
