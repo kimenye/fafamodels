@@ -38,11 +38,12 @@ update user:
 delete user:
 >>DELETE /users/:id.json
 
->>delete :destroy, id: user_id_
+>>delete :destroy, id: user_id
 
 >>response.body: "{\"message\":\"User was successfully destroyed\",\"status\":\"success\"}"
 
-update measurements:
+update measurements: THIS IS THE ONLY MEASUREMENTS METHOD - measurements are created with the user's creation, therefore only available for updating.
+
 >>PUT/PATCH    /measurements/:id.json
 
 >>put :update, id: user_id, measurement: {}
