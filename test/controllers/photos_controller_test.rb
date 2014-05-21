@@ -19,11 +19,10 @@ class PhotosControllerTest < ActionController::TestCase
 #   end
 
   def test_create
-    session[:user_id] = users(:one).id
     file = fixture_file_upload('files/test_file.png','application/json')
     
     assert_difference('Photo.count') do
-      post :create, photo: { image: file }
+      post :create, photo: {user_id: users(:one).id, image: file }
     end
   
     assert JSON(response.body)['message'] == "Photo was successfully added", "added does not pass correctly"

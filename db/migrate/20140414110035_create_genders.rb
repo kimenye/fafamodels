@@ -7,7 +7,7 @@ class CreateGenders < ActiveRecord::Migration
     end
     
     #populate with initial gender
-    %w(Male Female Boy/Girl).each do |name|
+    %w(male female kids).each do |name|
       Gender.find_or_create_by_name name
     end
   end

@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
   respond_to :json
-  before_filter :authorize, only: [:update, :destroy]
   before_action :set_user, only: [:update, :destroy]
 
   def index
@@ -12,7 +11,6 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       @user.create_measurement
-      session[:user_id] = @user.id #log the user in
       render json: {user_id: @user.id, message: 'User was successfully created', status: :success}
     else
       render json: {errors: @user.errors, message: 'User was not created', status: :unprocessable_entity }
@@ -44,6 +42,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :password, :date_of_birth, :gender_id, :phone_number)
+      params.require(:user).permit(:name, :email, :gender_id)
     end
 end

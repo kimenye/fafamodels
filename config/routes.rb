@@ -1,10 +1,12 @@
-Fafamodels::Application.routes.draw do
-  get 'logout', to: 'sessions#destroy', as: 'logout'
-  
+Fafamodels::Application.routes.draw do  
   resources :users
   resources :measurements
   resources :sessions
   resources :photos
+  
+  get 'hello' => 'application#hello', as: :hello
+  
+  
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

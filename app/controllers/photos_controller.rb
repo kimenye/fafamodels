@@ -1,6 +1,5 @@
 class PhotosController < ApplicationController
   respond_to :json
-  before_filter :authorize
   before_action :set_photo, only: [:show, :edit, :update, :destroy]
 
   # GET /photos
@@ -26,10 +25,11 @@ class PhotosController < ApplicationController
   # POST /photos
   # POST /photos.json
   def create
-    @photo = current_user.photos.build(photo_params)
+    @user = User.find_by(id: params[:photo][:user_id])
+    @photo = @user.photos.build(photo_params)
 
     if @photo.save
-      render json: {user_id: current_user.id, message: 'Photo was successfully added', status: :success}
+      render json: {user_id: @user.id, message: 'Photo was successfully added', status: :success}
     else
       render json: {errors: @photo.errors, message: 'Photo was not saved', status: :unprocessable_entity }
     end
