@@ -7,7 +7,7 @@ class UsersControllerTest < ActionController::TestCase
 
   def test_create_user_correctly
   assert_difference('User.count') do
-    post :create, user: { name: "name", email: "here@now.com", gender_id: genders(:male)}
+    post :create, user: { name: "name", email: "here@now.com", gender_id: genders(:male), modelling_agency: "my agency", phone_number: "+2546789876", country: "Kenya", town: "Migori"}
   end
   
   assert JSON(response.body)['message'] == "User was successfully created", "created user does not pass correctly"
