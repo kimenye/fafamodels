@@ -17,6 +17,9 @@
 #Ignore cov
 /public/coverage/
 
+# ignore dragonfly files
+/public/system/dragonfly/
+
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
