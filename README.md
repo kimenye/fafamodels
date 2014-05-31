@@ -12,13 +12,21 @@ create user:
 
 >>post :create, user: {}
 
->>required within user hash: user=>{:name, :email, :gender}
+>>required within user hash: user=>{:name, :email, :gender_id, :modelling_agency, :phone_number, :country, :town}
 
 >>>>name: “name”
 
 >>>>email: "user6@email.com"
 
 >>>>gender_id: 1 = male, 2 = female, 3 = kids
+
+>>>>modelling_agency: "agency name"
+
+>>>>phone_number: "+2541234567"
+
+>>>>country: "Kenya"
+
+>>>>town: "Migori"
 
 >>response.body: "{\"user_id\":980191093,\"message\":\"User was successfully created\",\"status\":\"success\"}"
 
